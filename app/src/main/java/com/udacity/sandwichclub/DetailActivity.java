@@ -21,7 +21,7 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-
+        // TODO: get hooks onto detail view with findById's
         ImageView ingredientsIv = findViewById(R.id.image_iv);
 
         Intent intent = getIntent();
@@ -65,6 +65,6 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void populateUI() {
-
+        // TODO: Populate views with sandwich fields
     }
 }
