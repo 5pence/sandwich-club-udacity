@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
@@ -21,8 +22,12 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-        // TODO: get hooks onto detail view with findById's
-        ImageView ingredientsIv = findViewById(R.id.image_iv);
+        ImageView mImageImageView = findViewById(R.id.image_iv);
+        TextView mNameTextView = findViewById(R.id.origin_tv);
+        TextView mAlsoKnownAsTextView = findViewById(R.id.also_known_tv);
+        TextView mPlaceOfOriginTextView = findViewById(R.id.place_of_origin_tv);
+        TextView mDescriptionTextView = findViewById(R.id.description_tv);
+        TextView mIngredientsTextView = findViewById(R.id.ingredients_tv);
 
         Intent intent = getIntent();
         if (intent == null) {
@@ -54,7 +59,7 @@ public class DetailActivity extends AppCompatActivity {
         populateUI();
         Picasso.with(this)
                 .load(sandwich.getImage())
-                .into(ingredientsIv);
+                .into(mImageImageView);
 
         setTitle(sandwich.getMainName());
     }
