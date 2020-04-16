@@ -21,5 +21,5 @@ Through this project, you will:
 
 ## Images of App
 Home Screen: [screen1], Detail Screen: [screen2]
-[screen1]: https://github.com/5pence/sandwich-club-udacity/blob/master/screen1.png
-[screen2]: https://github.com/5pence/sandwich-club-udacity/blob/master/screen2.png
+[screen1]: https://github.com/5pence/sandwich-club-udacity/blob/master/screenshot1.png
+[screen2]: https://github.com/5pence/sandwich-club-udacity/blob/master/screenshot2.png
