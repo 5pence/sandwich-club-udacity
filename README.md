@@ -20,6 +20,7 @@ Through this project, you will:
 - Brushing up on my Java
 
 ## Images of App
-Home Screen: [screen1], Detail Screen: [screen2]
-[screen1]: https://github.com/5pence/sandwich-club-udacity/blob/master/screenshot1.png
-[screen2]: https://github.com/5pence/sandwich-club-udacity/blob/master/screenshot2.png
+![Image of Home screen]
+(https://github.com/5pence/sandwich-club-udacity/blob/master/screenshot1.png)
+![Image of Detail screen]
+(https://github.com/5pence/sandwich-club-udacity/blob/master/screenshot2.png)
