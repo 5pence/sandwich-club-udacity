@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +22,7 @@ public class DetailActivity extends AppCompatActivity {
     public static final String EXTRA_POSITION = "extra_position";
     private static final int DEFAULT_POSITION = -1;
 
+    protected LinearLayout mLinearLayout;
     protected ImageView mImageImageView;
     protected TextView mAlsoKnownAsLabelTextView;
     protected TextView mAlsoKnownAsTextView;
@@ -36,6 +38,7 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+        mLinearLayout = findViewById(R.id.linear_layout_ll);
         mImageImageView = findViewById(R.id.image_iv);
         mAlsoKnownAsTextView = findViewById(R.id.also_known_tv);
         mAlsoKnownAsLabelTextView = findViewById(R.id.also_known_as_label_tv);
@@ -45,6 +48,7 @@ public class DetailActivity extends AppCompatActivity {
         mIngredientsTextView = findViewById(R.id.ingredients_tv);
         mPlaceOfOriginLabelTextView = findViewById(R.id.place_of_origin_label_tv);
         mPlaceOfOriginTextView = findViewById(R.id.place_of_origin_tv);
+
 
 
         Intent intent = getIntent();
@@ -83,7 +87,6 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void populateUI(Sandwich sandwich) {
-        // TODO: Populate views with sandwich fields
         setTitle(sandwich.getMainName());
 
         if (!sandwich.getImage().isEmpty()) {
@@ -105,11 +108,14 @@ public class DetailActivity extends AppCompatActivity {
                     mAlsoKnownAsTextView.append(", ");
                 }
             }
+        } else {
+            mAlsoKnownAsLabelTextView.setVisibility(View.GONE);
+            mAlsoKnownAsTextView.setVisibility(View.GONE);
         }
         if (!sandwich.getDescription().isEmpty()) {
             mDescriptionLabelTextView.setVisibility(View.VISIBLE);
             mDescriptionTextView.setVisibility(View.VISIBLE);
-            mDescriptionTextView.setText(sandwich.getDescription());
+            mDescriptionTextView.append(" " + sandwich.getDescription());
         }
         if (!sandwich.getIngredients().isEmpty()) {
             mIngredientsLabelTextView.setVisibility(View.VISIBLE);
@@ -129,10 +135,7 @@ public class DetailActivity extends AppCompatActivity {
         if (!sandwich.getPlaceOfOrigin().isEmpty()) {
             mPlaceOfOriginLabelTextView.setVisibility(View.VISIBLE);
             mPlaceOfOriginTextView.setVisibility(View.VISIBLE);
-            mPlaceOfOriginTextView.setText(sandwich.getPlaceOfOrigin());
+            mPlaceOfOriginTextView.append(" " + sandwich.getPlaceOfOrigin());
         }
-
-
-
     }
 }
